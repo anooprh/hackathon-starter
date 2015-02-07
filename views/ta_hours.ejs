@@ -6,6 +6,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="expires" content="0">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
 
     <title>TA Hours for <%= timeslot %></title>
     <style>
@@ -31,6 +32,7 @@
             height: 20px;
             line-height: 20px;
             vertical-align: middle;
+            width: 1000px;
         }
 
         header {
@@ -39,13 +41,36 @@
 
         #new-question-text{
             background: transparent;
+            margin-left: 40px;
             color: white;
             border-style: solid;
             border-width: 4px;
             border-color: #FFFFFF;
             border-radius: 2px;
+            padding: 5px;
+            margin-bottom: 5px;
             height: 20px;
-            width: 300px;
+            line-height: 20px;
+            vertical-align: middle;
+            width: 1000px;
+        }
+
+        #add-question-btn{
+            border-style: hidden;
+            background: transparent;
+            width: 40px;
+            height: 40px;
+            margin-left: 500px;
+        }
+
+        #new-question-text {
+            background: transparent;
+            border-style: solid;
+            border-width: 4px;
+            border-color: #FFFFFF;
+            border-radius: 2px;
+            color: #ffffff;
+            font-size: 14px;
         }
 
     </style>
@@ -55,6 +80,7 @@
             $("#new-question-box").hide();
             $("#add-question-btn").click(function () {
                 $("#new-question-box").show();
+                $(this).hide();
             });
             $("#new-question-submit-box").click(function () {
                 $.ajax({
@@ -123,10 +149,12 @@
         </tr>
         <% } %>
     </table>
-    <button id="add-question-btn">Add Question</button>
+    <button type="button" id="add-question-btn"><img
+        src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/plusbutton.png" width="40px"
+        height="40px" alt="Alt"/></button>
     <div id="new-question-box">
         <textarea id="new-question-text"></textarea>
-        <button id="new-question-submit-box">Submit</button>
+        <button type="submit" id="new-question-submit-box">Submit</button>
     </div>
 </div>
 </body>
