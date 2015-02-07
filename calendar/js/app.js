@@ -1,7 +1,5 @@
 (function($) {
 
-	"use strict";
-
 	var options = {
 		events_source: 'events.json.php',
 		view: 'month',
