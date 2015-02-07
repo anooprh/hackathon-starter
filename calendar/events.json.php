@@ -73,5 +73,13 @@
 			"start": "1364320800000",
 			"end":   "1364407286400"
 		}
+		{
+			"id": "300",
+			"title": "TA 1 hours",
+			"url": "http://www.example.com/",
+			"class": "event-important",
+			"start": "1423346879428",
+			"end":   "1423346889428"
+		}
 	]
 }

@@ -1,7 +1,7 @@
 (function($) {
 
 	var options = {
-		events_source: 'events.json.php',
+		events_source: 'https://rawgit.com/anooprh/hackathon-starter/master/calendar/events.json.php',
 		view: 'month',
 		tmpl_path: 'https://rawgit.com/anooprh/hackathon-starter/master/calendar/tmpls/',
 		tmpl_cache: false,
