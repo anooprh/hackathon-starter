@@ -65,12 +65,12 @@ app.use(multer({ dest: path.join(__dirname, 'uploads') }));
 app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
-//app.use(session({
-//  resave: true,
-//  saveUninitialized: true,
-//  secret: secrets.sessionSecret,
+app.use(session({
+  resave: true,
+  saveUninitialized: true,
+  secret: secrets.sessionSecret,
 //  store: new MongoStore({ url: secrets.db, autoReconnect: true })
-//}));
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
