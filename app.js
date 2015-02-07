@@ -13,10 +13,10 @@ var methodOverride = require('method-override');
 var multer  = require('multer');
 
 var _ = require('lodash');
-var MongoStore = require('connect-mongo')(session);
+//var MongoStore = require('connect-mongo')(session);
 var flash = require('express-flash');
 var path = require('path');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
@@ -43,17 +43,17 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
-mongoose.connect(secrets.db);
-mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
-});
+//mongoose.connect(secrets.db);
+//mongoose.connection.on('error', function() {
+//  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+//});
 
 /**
  * Express configuration.
  */
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 app.use(compress());
 app.use(connectAssets({
   paths: [path.join(__dirname, 'public/css'), path.join(__dirname, 'public/js')]
@@ -65,12 +65,12 @@ app.use(multer({ dest: path.join(__dirname, 'uploads') }));
 app.use(expressValidator());
 app.use(methodOverride());
 app.use(cookieParser());
-app.use(session({
-  resave: true,
-  saveUninitialized: true,
-  secret: secrets.sessionSecret,
-  store: new MongoStore({ url: secrets.db, autoReconnect: true })
-}));
+//app.use(session({
+//  resave: true,
+//  saveUninitialized: true,
+//  secret: secrets.sessionSecret,
+//  store: new MongoStore({ url: secrets.db, autoReconnect: true })
+//}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -93,6 +93,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/comments', homeController.comments);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

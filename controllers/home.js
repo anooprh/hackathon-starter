@@ -7,3 +7,9 @@ exports.index = function(req, res) {
     title: 'Home'
   });
 };
+
+exports.comments = function(req, res) {
+  res.render('comments', {
+    title: 'Home'
+  });
+};
