@@ -13,7 +13,15 @@
             border: 1px solid black;
         }
         body {
-            background-image: url('backgrounds.jpg');
+            background-image: url('https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/backgrounds.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .question_box {
+            background-image: url('https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/backgrounds.jpg/singlebutton.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
@@ -48,37 +56,43 @@
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
 <header>
-    TA Name : <%= ta_name %>
-    <hr/>
-    Time : <%= timeslot %>
-    <hr/>
-    Place : <%= place %>
-    <hr/>
+    <!--TA Name : <%= ta_name %>-->
+    <!--<hr/>-->
+    <!--Time : <%= timeslot %>-->
+    <!--<hr/>-->
+    <!--Place : <%= place %>-->
+    <!--<hr/>-->
 </header>
 <div class="container">
     <table>
-        <tr>
-            <td>Question Number</td>
-            <td>Question</td>
-            <td>Posted By</td>
-            <td>
-                Upvoted by
-            </td>
-        </tr>
+        <!--<tr>-->
+            <!--<td>Question Number</td>-->
+            <!--<td>Question</td>-->
+            <!--<td>Posted By</td>-->
+            <!--<td>-->
+                <!--Upvoted by-->
+            <!--</td>-->
+        <!--</tr>-->
 
         <% for(var i = 0; i < questions.length; i++) { %>
         <tr>
-            <td>Question <%= i %></td>
-            <td><%= questions[i].question %></td>
-            <td><%= questions[i].posted_by %></td>
             <td>
-                <% for(var j = 0; j < questions[i].upvoted_by.length; j++) { %>
-                <%= questions[i].upvoted_by[j] %> ,
-                <% } %>
+            <img src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/backgrounds.jpg/singlebutton.png" alt="Image"/>
+            <div class="question_box">
+                <%= questions[i].question %>
+            </div>
             </td>
-            <td>
-                <button class="question_upvote_box" qid="<%= i %>">Me too!</button>
-            </td>
+            <!--<td>Question <%= i %></td>-->
+            <!--<td><%= questions[i].question %></td>-->
+            <!--<td><%= questions[i].posted_by %></td>-->
+            <!--<td>-->
+                <!--<% for(var j = 0; j < questions[i].upvoted_by.length; j++) { %>-->
+                <!--<%= questions[i].upvoted_by[j] %> ,-->
+                <!--<% } %>-->
+            <!--</td>-->
+            <!--<td>-->
+                <!--<button class="question_upvote_box" qid="<%= i %>">Me too!</button>-->
+            <!--</td>-->
         </tr>
         <% } %>
     </table>
