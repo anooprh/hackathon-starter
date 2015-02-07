@@ -11,7 +11,7 @@
     <title>TA Hours for <%= timeslot %></title>
     <style>
         /*table, th, td {*/
-            /*border: 1px solid black;*/
+        /*border: 1px solid black;*/
         /*}*/
         body {
             /*background-color: red;*/
@@ -43,7 +43,7 @@
             margin-left: 40px;
         }
 
-        #new-question-text{
+        #new-question-text {
             background: transparent;
             margin-left: 40px;
             color: white;
@@ -59,7 +59,7 @@
             width: 1000px;
         }
 
-        #add-question-btn{
+        #add-question-btn {
             border-style: hidden;
             background: transparent;
             width: 40px;
@@ -67,7 +67,21 @@
             margin-left: 500px;
         }
 
-        #upvote-question-btn{
+        .upvote-question-btn {
+            border-style: hidden;
+            background: transparent;
+            width: 40px;
+            height: 40px;
+        }
+
+        .question_posters_photo {
+            border-style: hidden;
+            background: transparent;
+            width: 40px;
+            height: 40px;
+        }
+
+        .question_upvoters_photo{
             border-style: hidden;
             background: transparent;
             width: 40px;
@@ -98,21 +112,24 @@
                     type: "POST",
                     url: "/ta_hours/2/new_question",
                     data: {
-                        "question" : $("#new-question-text").val(),
-                        "posted_by" : "the great"
+                        "question": $("#new-question-text").val(),
+                        "posted_by": "the great"
                     },
-                    success: function(){
+                    success: function () {
                         location.reload();
                     }
                 })
             });
-            $(".question_upvote_box").click(function () {
+            $(".upvote-question-btn").click(function () {
                 var url = "/ta_hours/2/question_upvote/" + $(this).attr('qid');
                 $.ajax({
                     type: "POST",
                     url: url,
                     data: {
-                        "posted_by" : "the great"
+                        "posted_by": "the great"
+                    },
+                    success: function () {
+                        location.reload();
                     }
                 })
             });
@@ -131,34 +148,50 @@
 <div class="container">
     <table>
         <!--<tr>-->
-            <!--<td>Question Number</td>-->
-            <!--<td>Question</td>-->
-            <!--<td>Posted By</td>-->
-            <!--<td>-->
-                <!--Upvoted by-->
-            <!--</td>-->
+        <!--<td>Question Number</td>-->
+        <!--<td>Question</td>-->
+        <!--<td>Posted By</td>-->
+        <!--<td>-->
+        <!--Upvoted by-->
+        <!--</td>-->
         <!--</tr>-->
 
         <% for(var i = 0; i < questions.length; i++) { %>
         <tr>
             <td>
-            <div class="question_box">
-                <%= questions[i].question %>
-            </div>
+                <div class="question_box">
+                    <%= questions[i].question %>
+                </div>
             </td>
             <!--<td>Question <%= i %></td>-->
             <!--<td><%= questions[i].question %></td>-->
             <!--<td><%= questions[i].posted_by %></td>-->
             <!--<td>-->
-                <!--<% for(var j = 0; j < questions[i].upvoted_by.length; j++) { %>-->
-                <!--<%= questions[i].upvoted_by[j] %> ,-->
-                <!--<% } %>-->
+            <!--<% for(var j = 0; j < questions[i].upvoted_by.length; j++) { %>-->
+            <!--<%= questions[i].upvoted_by[j] %> ,-->
+            <!--<% } %>-->
             <!--</td>-->
             <!--<td>-->
-                <!--<button class="question_upvote_box" qid="<%= i %>">Me too!</button>-->
+            <!--<button class="question_upvote_box" qid="<%= i %>">Me too!</button>-->
             <!--</td>-->
+            <%= questions[i].upvoted_by.length%>
+            <% for(var j = 0; j < questions[i].upvoted_by.length; j++) { %>
             <td>
-                <button type="button" id="upvote-question-btn"><img
+                <button type="button" class="question_upvoters_photo"><img
+                            src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/M.png"
+                            width="35px"
+                            height="35px" alt="Alt"/></button>
+            </td>
+            <% } %>
+
+            <td>
+                <button type="button" class="question_posters_photo"><img
+                            src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/M.png"
+                            width="35px"
+                            height="35px" alt="Alt"/></button>
+            </td>
+            <td>
+                <button type="button" class="upvote-question-btn" qid="<%= i %>"><img
                             src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/plusbutton.png"
                             width="20px"
                             height="20px" alt="Alt"/></button>
@@ -167,8 +200,9 @@
         <% } %>
     </table>
     <button type="button" id="add-question-btn"><img
-        src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/plusbutton.png" width="40px"
-        height="40px" alt="Alt"/></button>
+                src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/plusbutton.png"
+                width="40px"
+                height="40px" alt="Alt"/></button>
     <div id="new-question-box">
         <textarea id="new-question-text"></textarea>
         <button type="submit" id="new-question-submit-box">Submit</button>

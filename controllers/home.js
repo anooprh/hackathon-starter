@@ -94,7 +94,7 @@ exports.upvote_question = function (req, res) {
 //                    console.log("after save");
 //                    console.log(JSON.stringify(result, null, "\t"));
 //                })
-//                res.redirect("/ta_hours/"+req.params.ta_hours_id);
+                res.redirect("/ta_hours/"+req.params.ta_hours_id);
 //            });
 
         } else {
