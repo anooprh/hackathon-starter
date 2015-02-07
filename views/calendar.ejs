@@ -1,116 +1,639 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Twitter Bootstrap jQuery Calendar component</title>
+    <title>Twitter Bootstrap jQuery Calendar component</title>
 
-	<meta name="description" content="Full view calendar component for twitter bootstrap with year, month, week, day views.">
-	<meta name="keywords" content="jQuery,Bootstrap,Calendar,HTML,CSS,JavaScript,responsive,month,week,year,day">
-	<meta name="author" content="Serhioromano">
-	<meta charset="UTF-8">
+    <meta name="description"
+          content="Full view calendar component for twitter bootstrap with year, month, week, day views.">
+    <meta name="keywords" content="jQuery,Bootstrap,Calendar,HTML,CSS,JavaScript,responsive,month,week,year,day">
+    <meta name="author" content="Serhioromano">
+    <meta charset="UTF-8">
 
-	<link rel="stylesheet" href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/css/bootstrap.css">
-	<link rel="stylesheet" href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/css/bootstrap-responsive.css">
-	<link rel="stylesheet" href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/css/calendar.css">
+    <link rel="stylesheet"
+          href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/css/bootstrap.css">
+    <link rel="stylesheet"
+          href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="https://rawgit.com/anooprh/hackathon-starter/master/calendar/css/calendar.css">
 
-	<style type="text/css">
-		.btn-twitter {
-			padding-left: 30px;
-			background: rgba(0, 0, 0, 0) url(https://platform.twitter.com/widgets/images/btn.27237bab4db188ca749164efd38861b0.png) -20px 6px no-repeat;
-			background-position: -20px 11px !important;
-		}
-		.btn-twitter:hover {
-			background-position:  -20px -18px !important;
-		}
-	</style>
+    <style type="text/css">
+        .btn-twitter {
+            padding-left: 30px;
+            background: rgba(0, 0, 0, 0) url(https://platform.twitter.com/widgets/images/btn.27237bab4db188ca749164efd38861b0.png) -20px 6px no-repeat;
+            background-position: -20px 11px !important;
+        }
+
+        .btn-twitter:hover {
+            background-position: -20px -18px !important;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-	<div class="hero-unit">
-	  <h1>15-112 Office Hours</h1>
-	  <p>&nbsp;</p>
+<div class="hero-unit">
+    <h1>15-112 Office Hours</h1>
 
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-		</script>
+    <p>&nbsp;</p>
+
+    <script>!function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+    </script>
 </div>
 
-	<div class="page-header">
-	  <p><strong> FEBRUARY 2015</strong></p>
-	  <p>&nbsp;</p>
-	  <div class="form-inline">
+<div class="page-header">
+    <p><strong> March 2013</strong></p>
 
-	  </div><strong>
+    <p>&nbsp;</p>
+
+    <div class="form-inline">
+
+    </div>
+    <strong>
 </div>
 
-	<div class="row pagination-centered pull-right">
-		<div class="span9">
-			<div id="calendar"></div>
-		</div>
-		<div class="span3">
-			<div class="row-fluid">
+<div class="row pagination-centered pull-right">
+<div class="span9">
+<div id="calendar">
+<div class="cal-row-fluid cal-row-head">
+
+    <div class="cal-cell1">Sunday</div>
+
+    <div class="cal-cell1">Monday</div>
+
+    <div class="cal-cell1">Tuesday</div>
+
+    <div class="cal-cell1">Wednesday</div>
+
+    <div class="cal-cell1">Thursday</div>
+
+    <div class="cal-cell1">Friday</div>
+
+    <div class="cal-cell1">Saturday</div>
+
+</div>
+<div class="cal-month-box">
 
 
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-outmonth cal-day-weekend cal-month-first-row">
+            <span class="pull-right" data-cal-date="2013-02-24" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">24</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-outmonth cal-month-first-row">
+            <span class="pull-right" data-cal-date="2013-02-25" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">25</span>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-outmonth cal-month-first-row">
+            <span class="pull-right" data-cal-date="2013-02-26" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">26</span>
+
+            <div class="events-list" data-cal-start="1362974400000" data-cal-end="1363060800000">
+
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
+
+            </div>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-outmonth cal-month-first-row">
+            <span class="pull-right" data-cal-date="2013-02-27" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">27</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-outmonth cal-month-first-row">
+            <span class="pull-right" data-cal-date="2013-02-28" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">28</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-01" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">1</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-02" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">2</span>
+
+        </div>
+    </div>
+</div>
 
 
-		</div>
-	</div>
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-03" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">3</span>
 
-	<div></div>
-	<br><br>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-04" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">4</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-05" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">5</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-06" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">6</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-07" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">7</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-08" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">8</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-09" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">9</span>
+
+        </div>
+    </div>
+</div>
 
 
-	</a>
-	<br><br>
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-10" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">10</span>
 
-	<div id="disqus_thread"></div>
-	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div class="events-list" data-cal-start="1362891600000" data-cal-end="1362978000000">
 
-	<div class="modal hide fade" id="events-modal">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			<h3>Event</h3>
-		</div>
-		<div class="modal-body" style="height: 400px">
-		</div>
-		<div class="modal-footer">
-			<a href="#" data-dismiss="modal" class="btn">Close</a>
-		</div>
-	</div>
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
 
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/underscore/underscore-min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/jstimezonedetect/jstz.min.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/bg-BG.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/nl-NL.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/fr-FR.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/de-DE.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/el-GR.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/it-IT.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/hu-HU.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/pl-PL.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/pt-BR.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ro-RO.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-CO.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-MX.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-ES.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ru-RU.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/sv-SE.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/zh-CN.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/cs-CZ.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ko-KR.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/zh-TW.js"></script>
-	  <script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/id-ID.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/calendar.js"></script>
-	<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/app.js"></script>
+            </div>
 
-	<!--<script type="text/javascript">-->
-		<!--var disqus_shortname = 'bootstrapcalendar'; // required: replace example with your forum shortname-->
-		<!--(function() {-->
-			<!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
-			<!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
-			<!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
-		<!--})();-->
-	<!--</script>-->
+            <div id="cal-week-box" data-cal-week="2013-03-10" style="display: none;">Week 11</div>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-11" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">11</span>
+
+            <div class="events-list" data-cal-start="1362974400000" data-cal-end="1363060800000">
+
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-12" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">12</span>
+
+            <div class="events-list" data-cal-start="1363060800000" data-cal-end="1363147200000">
+
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
+
+                <a href="/ta_hours/2" data-event-id="294" data-event-class="event-info"
+                   class="pull-left event event-info" data-toggle="tooltip" title=""
+                   data-original-title="This is information class "></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-13" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">13</span>
+
+            <div class="events-list" data-cal-start="1363147200000" data-cal-end="1363233600000">
+
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
+
+                <a href="/ta_hours/2" data-event-id="294" data-event-class="event-info"
+                   class="pull-left event event-info" data-toggle="tooltip" title=""
+                   data-original-title="This is information class "></a>
+
+                <a href="/ta_hours/2" data-event-id="256" data-event-class="event-warning"
+                   class="pull-left event event-warning" data-toggle="tooltip" title=""
+                   data-original-title="Event that ends on timeline"></a>
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-14" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">14</span>
+
+            <div class="events-list" data-cal-start="1363233600000" data-cal-end="1363320000000">
+
+                <a href="/ta_hours/2" data-event-id="294" data-event-class="event-info"
+                   class="pull-left event event-info" data-toggle="tooltip" title=""
+                   data-original-title="This is information class "></a>
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+                <a href="/ta_hours/2" data-event-id="297" data-event-class="event-success"
+                   class="pull-left event event-success" data-toggle="tooltip" title=""
+                   data-original-title="This is success event"></a>
+
+                <a href="/ta_hours/2" data-event-id="276" data-event-class="event-success"
+                   class="pull-left event event-success" data-toggle="tooltip" title=""
+                   data-original-title="Short day event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-15" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">15</span>
+
+            <div class="events-list" data-cal-start="1363320000000" data-cal-end="1363406400000">
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-16" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">16</span>
+
+            <div class="events-list" data-cal-start="1363406400000" data-cal-end="1363492800000">
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-17" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">17</span>
+
+            <div class="events-list" data-cal-start="1363492800000" data-cal-end="1363579200000">
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-18" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">18</span>
+
+            <div class="events-list" data-cal-start="1363579200000" data-cal-end="1363665600000">
+
+                <a href="/ta_hours/2" data-event-id="548" data-event-class="event-special"
+                   class="pull-left event event-special" data-toggle="tooltip" title=""
+                   data-original-title="This is special event"></a>
+
+            </div>
+
+            <div id="cal-day-tick" style="display: block;"><i
+                        class="icon-chevron-down glyphicon glyphicon-chevron-down"></i></div>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">19</span>
+
+            <div class="events-list" >
+
+                <a href="/ta_hours/2" data-event-id="293" data-event-class="event-warning" class="pull-left event event-warning" data-toggle="tooltip" title="" data-original-title="This is warning class event with very long title to check how it fits to evet in day view"></a>
+
+                <a href="/ta_hours/2" data-event-id="294" data-event-class="event-info" class="pull-left event event-info" data-toggle="tooltip" title="" data-original-title="This is information class "></a>
+
+            </div>
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-20" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">20</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-21" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">21</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-22" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">22</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-23" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">23</span>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-24" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">24</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-25" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">25</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-26" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">26</span>
+
+            <div class="events-list" data-cal-start="1364270400000" data-cal-end="1364356800000">
+
+                <a href="/ta_hours/2" data-event-id="295" data-event-class="event-important"
+                   class="pull-left event event-important" data-toggle="tooltip" title=""
+                   data-original-title="Event 3"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-27" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">27</span>
+
+            <div class="events-list" data-cal-start="1364356800000" data-cal-end="1364443200000">
+
+                <a href="/ta_hours/2" data-event-id="295" data-event-class="event-important"
+                   class="pull-left event event-important" data-toggle="tooltip" title=""
+                   data-original-title="Event 3"></a>
+
+                <a href="/ta_hours/2" data-event-id="532" data-event-class="event-inverse"
+                   class="pull-left event event-inverse" data-toggle="tooltip" title=""
+                   data-original-title="This is inverse event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-28" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">28</span>
+
+            <div class="events-list" data-cal-start="1364443200000" data-cal-end="1364529600000">
+
+                <a href="/ta_hours/2" data-event-id="532" data-event-class="event-inverse"
+                   class="pull-left event event-inverse" data-toggle="tooltip" title=""
+                   data-original-title="This is inverse event"></a>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-inmonth">
+            <span class="pull-right" data-cal-date="2013-03-29" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">29</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-30" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">30</span>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="cal-row-fluid cal-before-eventlist">
+    <div class="cal-cell1 cal-cell" data-cal-row="-day1">
+        <div class="cal-month-day cal-day-inmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-03-31" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">31</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day2">
+        <div class="cal-month-day cal-day-outmonth">
+            <span class="pull-right" data-cal-date="2013-04-01" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">1</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day3">
+        <div class="cal-month-day cal-day-outmonth">
+            <span class="pull-right" data-cal-date="2013-04-02" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">2</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day4">
+        <div class="cal-month-day cal-day-outmonth">
+            <span class="pull-right" data-cal-date="2013-04-03" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">3</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day5">
+        <div class="cal-month-day cal-day-outmonth">
+            <span class="pull-right" data-cal-date="2013-04-04" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">4</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day6">
+        <div class="cal-month-day cal-day-outmonth">
+            <span class="pull-right" data-cal-date="2013-04-05" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">5</span>
+
+        </div>
+    </div>
+    <div class="cal-cell1 cal-cell" data-cal-row="-day7">
+        <div class="cal-month-day cal-day-outmonth cal-day-weekend">
+            <span class="pull-right" data-cal-date="2013-04-06" data-cal-view="day" data-toggle="tooltip" title=""
+                  data-original-title="">6</span>
+
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="span3">
+    <div class="row-fluid">
+
+
+    </div>
+</div>
+
+<div></div>
+<br><br>
+
+
+</a>
+<br><br>
+
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<div class="modal hide fade" id="events-modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Event</h3>
+    </div>
+    <div class="modal-body" style="height: 400px">
+    </div>
+    <div class="modal-footer">
+        <a href="#" data-dismiss="modal" class="btn">Close</a>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/underscore/underscore-min.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/bootstrap2/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/components/jstimezonedetect/jstz.min.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/bg-BG.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/nl-NL.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/fr-FR.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/de-DE.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/el-GR.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/it-IT.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/hu-HU.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/pl-PL.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/pt-BR.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ro-RO.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-CO.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-MX.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/es-ES.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ru-RU.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/sv-SE.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/zh-CN.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/cs-CZ.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/ko-KR.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/zh-TW.js"></script>
+<script type="text/javascript"
+        src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/language/id-ID.js"></script>
+<!--<script type="text/javascript"-->
+        <!--src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/calendar.js"></script>-->
+<!--<script type="text/javascript" src="https://rawgit.com/anooprh/hackathon-starter/master/calendar/js/app.js"></script>-->
+
+<!--<script type="text/javascript">-->
+<!--var disqus_shortname = 'bootstrapcalendar'; // required: replace example with your forum shortname-->
+<!--(function() {-->
+<!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+<!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+<!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+<!--})();-->
+<!--</script>-->
 </div>
 </body>
 </html>
