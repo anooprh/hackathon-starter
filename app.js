@@ -68,14 +68,14 @@ app.use(cookieParser());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: secrets.sessionSecret,
+  secret: secrets.sessionSecret
 //  store: new MongoStore({ url: secrets.db, autoReconnect: true })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(lusca({
-  csrf: true,
+  csrf: false,
   xframe: 'SAMEORIGIN',
   xssProtection: true
 }));
@@ -93,7 +93,9 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/comments', homeController.comments);
+app.get('/ta_hours/:ta_hours_id', homeController.ta_hours);
+app.post('/ta_hours/:ta_hours_id/new_question', homeController.new_question);
+app.get('/ta_hours/:ta_hours_id/question_upvote/:qid', homeController.upvote_question);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
