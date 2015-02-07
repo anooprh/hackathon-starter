@@ -19,3 +19,7 @@ node_modules
 *.iml
 .DS_Store
 Thumbs.db
+.idea/
+.ipr
+.iml
+.iws
