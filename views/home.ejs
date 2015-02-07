@@ -9,7 +9,7 @@
             background-size: cover;
         }
 
-        .content > input{
+        #email_input{
             background: transparent;
             border-style: solid;
             border-width: 4px;
@@ -18,14 +18,19 @@
             height: 40px;
             color: #ffffff;
             padding: 20px;
-        }
-
-        #email_input{
             margin-left: 565px;
             margin-top: 420px;
         }
 
         #password_input{
+            background: transparent;
+            border-style: solid;
+            border-width: 4px;
+            border-radius: 4px;
+            border-color: #FFFFFF;
+            height: 40px;
+            color: #ffffff;
+            padding: 20px;
             margin-left: 565px;
             margin-top: 20px;
         }
@@ -52,7 +57,10 @@
     <div class="content">
         <input id="email_input" type="email" placeholder="user@andrew.cmu.edu"/>
         <input id="password_input" type="password" placeholder="password"/>
-        <input id="login_btn" type="button" value="LOGIN"/>
+        <button type="button" class="upvote-question-btn" qid="<%= i %>"><img
+                    src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/LGOIN.png"
+                    width="40px"
+                    height="40px" alt="Alt"/></button>
     </div>
 </body>
 </html>
