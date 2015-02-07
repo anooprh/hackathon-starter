@@ -60,8 +60,8 @@ if(!String.prototype.formatNum) {
 		// /component/bootstrap-calendar/tmpls/
 		// or absolute
 		// http://localhost/component/bootstrap-calendar/tmpls/
-		tmpl_path:          'tmpls/',
-		tmpl_cache:         true,
+		tmpl_path:          'https://rawgit.com/anooprh/hackathon-starter/master/calendar/tmpls/',
+		tmpl_cache:         false,
 		classes:            {
 			months: {
 				inmonth:  'cal-day-inmonth',
