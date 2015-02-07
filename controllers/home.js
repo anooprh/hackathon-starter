@@ -10,6 +10,12 @@ exports.index = function (req, res) {
     });
 };
 
+exports.ta_hours_calendar = function (req, res) {
+    res.render('calendar', {
+        title: 'Home'
+    });
+};
+
 exports.ta_hours = function (req, res) {
     var ta_hour_doc;
 //    Ta_hour.find(function(err, ta_hour) {
@@ -102,3 +108,5 @@ exports.upvote_question = function (req, res) {
         }
     });
 };
+
+

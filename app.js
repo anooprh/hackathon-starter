@@ -107,6 +107,7 @@ ta_hour.save();
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.get('/ta_hours/calendar', homeController.ta_hours_calendar);
 app.get('/ta_hours/:ta_hours_id', homeController.ta_hours);
 app.post('/ta_hours/:ta_hours_id/new_question', homeController.new_question);
 app.post('/ta_hours/:ta_hours_id/question_upvote/:qid', homeController.upvote_question);
