@@ -37,6 +37,10 @@
 
         header {
             height: 150px;
+            background-image: url('https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/headername.png');
+            background-repeat: no-repeat;
+            margin-top: 180px;
+            margin-left: 40px;
         }
 
         #new-question-text{
@@ -63,7 +67,14 @@
             margin-left: 500px;
         }
 
-        #new-question-text {
+        #upvote-question-btn{
+            border-style: hidden;
+            background: transparent;
+            width: 40px;
+            height: 40px;
+        }
+
+        #new-question-submit-box {
             background: transparent;
             border-style: solid;
             border-width: 4px;
@@ -146,6 +157,12 @@
             <!--<td>-->
                 <!--<button class="question_upvote_box" qid="<%= i %>">Me too!</button>-->
             <!--</td>-->
+            <td>
+                <button type="button" id="upvote-question-btn"><img
+                            src="https://raw.githubusercontent.com/anooprh/hackathon-starter/master/public/img/plusbutton.png"
+                            width="20px"
+                            height="20px" alt="Alt"/></button>
+            </td>
         </tr>
         <% } %>
     </table>
