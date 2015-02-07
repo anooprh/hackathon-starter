@@ -3,7 +3,7 @@
 	var options = {
 		events_source: 'events.json.php',
 		view: 'month',
-		tmpl_path: 'tmpls/',
+		tmpl_path: 'https://rawgit.com/anooprh/hackathon-starter/master/calendar/tmpls/',
 		tmpl_cache: false,
 		day: '2013-03-12',
 		onAfterEventsLoad: function(events) {
