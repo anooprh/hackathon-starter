@@ -13,10 +13,10 @@ var methodOverride = require('method-override');
 var multer  = require('multer');
 
 var _ = require('lodash');
-//var MongoStore = require('connect-mongo')(session);
+var MongoStore = require('connect-mongo')(session);
 var flash = require('express-flash');
 var path = require('path');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
@@ -43,10 +43,10 @@ var app = express();
 /**
  * Connect to MongoDB.
  */
-//mongoose.connect(secrets.db);
-//mongoose.connection.on('error', function() {
-//  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
-//});
+mongoose.connect(secrets.db);
+mongoose.connection.on('error', function() {
+  console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');
+});
 
 /**
  * Express configuration.
@@ -68,8 +68,8 @@ app.use(cookieParser());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: secrets.sessionSecret
-//  store: new MongoStore({ url: secrets.db, autoReconnect: true })
+  secret: secrets.sessionSecret,
+  store: new MongoStore({ url: secrets.db, autoReconnect: true })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -89,13 +89,27 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+var Ta_hour = require('./models/Ta_hour');
+Ta_hour.remove({}, function () {
+    console.log("cleaning db");
+});
+
+var ta_hour = new Ta_hour({
+    ta_hour_id: "2",
+    ta_name: "someone",
+    time: "9-11",
+    place: "GHC 4301",
+    questions: []
+});
+ta_hour.save();
+
 /**
  * Primary app routes.
  */
 app.get('/', homeController.index);
 app.get('/ta_hours/:ta_hours_id', homeController.ta_hours);
 app.post('/ta_hours/:ta_hours_id/new_question', homeController.new_question);
-app.get('/ta_hours/:ta_hours_id/question_upvote/:qid', homeController.upvote_question);
+app.post('/ta_hours/:ta_hours_id/question_upvote/:qid', homeController.upvote_question);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
